@@ -2,8 +2,9 @@
 
 import Quote from "@/app/components/quote";
 import Promo from "@/app/components/promo";
-import Hero from "../components/hero";
-import Service from "../components/service";
+import Hero from "@/app/components/hero";
+import Service from "@/app/components/service";
+
 
 export default function Services() {
     return (
