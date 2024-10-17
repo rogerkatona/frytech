@@ -1,6 +1,7 @@
 "use client"; // This is a client component 👈🏽
 
 import {useState} from "react";
+import {router} from "next/client";
 
 export const Form = ({ initialRef}) => {
 
@@ -26,11 +27,6 @@ export const Form = ({ initialRef}) => {
     const handleContactFormSubmit = async (e) => {
         e.preventDefault()
 
-        if (router.pathname.startsWith("/campaign/")){
-            setCampaignState(true)
-        }
-
-        const location = campaignState === true ? 'campaign-usAudit-blueprospect.com' : ' FryTech website contact form'
         const endpoint =
             "https://ke37371vfe.execute-api.us-east-1.amazonaws.com/default/sendContactEmailFryTech";
         // We use JSON.stringify here so the data can be sent as a string via HTTP
@@ -38,7 +34,6 @@ export const Form = ({ initialRef}) => {
             senderName: formState.name,
             senderEmail: formState.email,
             message: formState.contactMessage,
-            senderLocation: location
         });
         const requestOptions = {
             method: "POST",
@@ -53,7 +48,7 @@ export const Form = ({ initialRef}) => {
                     .then((res) => {
                     if (res.status === 200 || 500) {
                         setToastMessage({message:(
-                                <div className={`${router.pathname.startsWith("/campaign/")  ? 'hidden' : 'block'} absolute bottom-0 text-white.100 -mb-10`}>
+                                <div className="absolute bottom-0 text-white.100 -mb-10">
                                     Thank you for reaching out to us.  We&apos;ll respond to you shortly!  Have a great day.
                                 </div>
                             )});
@@ -122,7 +117,7 @@ export const Form = ({ initialRef}) => {
                         </label>
                         <div>
                         <textarea
-                            className="w-full border border-darkBlue.700 py-3 px-4 mb-4 "
+                            className="w-full border border-darkBlue.700 py-3 px-4 mb-4 text-darkBlue.700"
                             rows="4"
                             value={formState.contactMessage}
                             onChange={(e) =>
@@ -136,6 +131,7 @@ export const Form = ({ initialRef}) => {
                     <button
                         type="submit"
                         className = "text-xs text-medBlue.500 uppercase px-3 py-2 lg:mt-0 mt-2 rounded-lg bg-tan.100">
+                        Submit
                     </button>
                 </div>
             </div>

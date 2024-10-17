@@ -1,11 +1,13 @@
+import {Form} from "@/app/components/form";
+import React from "react";
 
 export default function HeroIndex({ children, home }) {
     return (
         <section className="bg-gray.800">
-            <div className="flex lg:flex-row flex-col-reverse lg:justify-between lg:items-center lg:mx-auto lg:max-w-7xl lg:h-screen90vh py-6 md:px-0 px-6">
+            <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:h-screen90vh py-12 md:px-0 px-12">
 
-                <div className="">
-                    <div className="mb-4 md:block hidden">
+                <div className="pt-12 mr-6">
+                    <div className="mb-4 ">
                         <img
                             src="/image/logo/logoName-fryTech.png"
                             width={400}
@@ -17,13 +19,21 @@ export default function HeroIndex({ children, home }) {
                         kits from other GUNCAD manufacturers and provide only the highest quality parts.
                     </div>
                 </div>
-                <div className="lg:mb-0 mb-6 flex justify-center items-center">
+                <div className="lg:mb-0 mb-6 flex justify-center lg:bg-gray.700">
                     <div className="">
-                        <img
-                            src="/image/logo/logoGraphic-fryTech.png"
-                            width={700}
-                            alt="Frytech - Logo"
-                        />
+                        <section className="flex flex-col w-full md:px-12 px-2 pt-12 w-1/2 ">
+                            <div className="">
+                                <div className="font-bebasNeue text-5xl text-gray.400 ">
+                                    Contact FryTech
+                                </div>
+                                <div className="text-gray.400 text-xl font-light leading-relaxed">
+                                    <div className="py-4" >
+                                        Provide your information and we will reach out to quickly to discuss how we can help. We look forward to hearing from you soon!
+                                    </div>
+                                </div>
+                                <Form/>
+                            </div>
+                        </section>
                     </div>
                 </div>
 
