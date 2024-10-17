@@ -1,14 +1,14 @@
 "use client"; // This is a client component 👈🏽
 
 import {useState} from "react";
-import {router} from "next/client";
 
 export const Form = ({ initialRef}) => {
 
     const initialState = {
         name: '',
         email: '',
-        contactMessage: ''
+        contactMessage: '',
+        location:''
     };
 
     const [formState, setFormState] = useState(initialState);
@@ -26,6 +26,11 @@ export const Form = ({ initialRef}) => {
     const handleContactFormSubmit = async (e) => {
         e.preventDefault()
 
+        if (router.pathname.startsWith("/campaign/")){
+            setCampaignState(true)
+        }
+
+        const location = campaignState === true ? 'campaign-usAudit-blueprospect.com' : ' FryTech website contact form'
         const endpoint =
             "https://ke37371vfe.execute-api.us-east-1.amazonaws.com/default/sendContactEmailFryTech";
         // We use JSON.stringify here so the data can be sent as a string via HTTP
@@ -33,6 +38,7 @@ export const Form = ({ initialRef}) => {
             senderName: formState.name,
             senderEmail: formState.email,
             message: formState.contactMessage,
+            senderLocation: location
         });
         const requestOptions = {
             method: "POST",
@@ -47,7 +53,7 @@ export const Form = ({ initialRef}) => {
                     .then((res) => {
                     if (res.status === 200 || 500) {
                         setToastMessage({message:(
-                                <div className="absolute bottom-0 text-white.100 -mb-10">
+                                <div className={`${router.pathname.startsWith("/campaign/")  ? 'hidden' : 'block'} absolute bottom-0 text-white.100 -mb-10`}>
                                     Thank you for reaching out to us.  We&apos;ll respond to you shortly!  Have a great day.
                                 </div>
                             )});
