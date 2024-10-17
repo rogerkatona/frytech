@@ -122,7 +122,7 @@ export const Form = ({ initialRef}) => {
                         </label>
                         <div>
                         <textarea
-                            className="w-full border border-darkBlue.700 py-3 px-4 mb-4 "
+                            className="text-darkBlue.700 w-full border border-darkBlue.700 py-3 px-4 mb-4 "
                             rows="4"
                             value={formState.contactMessage}
                             onChange={(e) =>
