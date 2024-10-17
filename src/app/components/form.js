@@ -8,8 +8,7 @@ export const Form = ({ initialRef}) => {
     const initialState = {
         name: '',
         email: '',
-        contactMessage: '',
-        location:''
+        contactMessage: ''
     };
 
     const [formState, setFormState] = useState(initialState);
