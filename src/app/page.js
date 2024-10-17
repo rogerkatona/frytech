@@ -9,12 +9,10 @@ import Promo from "@/app/components/promo";
 export default function Home() {
   return (
     <main className="">
-
       <HeroIndex/>
       <Quote id={0}/>
       <Features  featured="true" type="service"/>
       <Promo id={1}/>
-
     </main>
   )
 }

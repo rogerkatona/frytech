@@ -7,7 +7,7 @@ import  { Form } from "./form";
 const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
 
     <>
-        <div className="relative" aria-modal aria-hidden tabIndex={-1} role="dialog">
+        <div className="relative" aria-modal aria-hidden tabIndex={-1} role="dialog ">
             <div className="w-full h-full z-20 bg-bg-contactModal bg-cover fixed top-0 left-0 flex flex-row">
 
                 <section className="fixed right-0">

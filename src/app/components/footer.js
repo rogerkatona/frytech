@@ -13,23 +13,21 @@ export default function Footer() {
     return (
         <footer className="flex flex-col justify-center md:items-center md:px-0 px-6 bg-medBlue.900 py-48 space-y-6">
          <section>
-                <Link href='/'>
-                    <span>
-                        <div className="flex flex-row items-center ">
-                            <Link
-                                href='/'>
-                                <span>
-                                    <img
-                                        src="/image/logo/logoName-fryTech.png"
-                                        width={200}
-                                        alt='Blue Prospect Logo'
-                                    />
-                                </span>
-                            </Link>
-                        </div>
-                    </span>
-                </Link>
-            </section>
+            <div>
+                <div className="flex flex-row items-center ">
+                    <Link
+                        href='/'>
+                        <span>
+                            <img
+                                src="/image/logo/logoName-fryTech.png"
+                                width={200}
+                                alt='Blue Prospect Logo'
+                            />
+                        </span>
+                    </Link>
+                </div>
+            </div>
+        </section>
 
             <div className='flex md:flex-row flex-col'>
                 <NavBar navItems={navItems}/>
