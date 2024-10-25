@@ -8,7 +8,7 @@ export default function HeroIndex({ children, home }) {
             <section className="bg-gray.900">
                 <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:py-12 px-4 py-4">
                     <div className="lg:pr-6 pr-0">
-                        <p className="font-bebasNeue lg:text-6xl text-4xl text-gray.400">
+                        <p className="font-bebasNeue lg:text-7xl text-5xl text-gray.400">
                             PATENTED Brujeria Buffer Tube
                         </p>
                         <p className="text-gray.500 text-xl">
@@ -18,12 +18,11 @@ export default function HeroIndex({ children, home }) {
                             By embedding free-moving magnets into the buffer tube of a firearm, Fry Tech has significantly reduced felt recoil, providing users with a more comfortable and enjoyable shooting experience.
                         </p>
                     </div>
-                    <div className="">
+                    <div className="lg:max-w-fit sm:max-w-sm">
                         <ReactPlayer
                             controls={true}
                             playing={false}
                             url="https://youtu.be/H0RnuminILA?si=SXsTZ3PqPAAKQ-b1"
-                            className="" // Adjust width for different screen sizes
                         />
                     </div>
                 </div>
