@@ -6,9 +6,9 @@ import Quote from "@/app/components/quote";
 
 export default function Home() {
   return (
-    <main className="">
+    <section className="">
       <HeroIndex/>
       <Quote id={0}/>
-    </main>
+    </section>
   )
 }

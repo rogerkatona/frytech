@@ -5,19 +5,19 @@ import ReactPlayer from "react-player";
 export default function HeroIndex({ children, home }) {
     return (
         <section className="bg-gray.900 py-6">
-            <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl md:px-0 px-12 ">
+            <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl md:px-0 px-12 py-12 ">
                <div className="pr-6">
                    <p className="font-bebasNeue text-6xl text-gray.400 ">
                        PATENTED Brujeria Buffer Tube
                    </p>
-                   <p className="text-gray.500 text-xl leading-relaxed">
+                   <p className="text-gray.500 text-xl ">
                        Fry Tech LLC is proud to announce the release of our patented Brujeria Buffer Tube, marking the debut of our cutting-edge recoil reduction technology.
                    </p>
-                   <p className="text-gray.500 text-xl leading-relaxed pt-2">
+                   <p className="text-gray.500 text-xl  pt-2">
                        By embedding free-moving magnets into the buffer tube of a firearm, Fry Tech has significantly reduced felt recoil, providing users with a more comfortable and enjoyable shooting experience. </p>
 
                </div>
-                <div className="">
+                <div className="lg:py-0 py-6">
                     <ReactPlayer
                         controls={true}
                         playing={true}
