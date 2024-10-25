@@ -8,7 +8,7 @@ export default function HeroIndex({ children, home }) {
             <section className="bg-gray.900">
                 <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:py-12 px-4 py-4">
                     <div className="lg:pr-6 pr-0">
-                        <p className="font-bebasNeue text-6xl text-gray.400">
+                        <p className="font-bebasNeue lg:text-6xl text-4xl text-gray.400">
                             PATENTED Brujeria Buffer Tube
                         </p>
                         <p className="text-gray.500 text-xl">
@@ -32,22 +32,22 @@ export default function HeroIndex({ children, home }) {
             <section className="bg-gray.800">
                 <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:py-12 px-4 py-4">
                     <div className="mr-6">
-                        <h2 className="font-bebasNeue text-gray.400 text-4xl">Control</h2>
+                        <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl">Control</h2>
                         <p className="text-gray.500 text-xl leading-relaxed pb-6">
                             It's always about control. Recoil often causes the firearm to rise, taking the barrel off target. With Fry Tech's technology, recoil energy is directed linearly, keeping the barrel pointed downrange rather than lifting into the air. This increased control is especially noticeable on the second and subsequent shots, as the aim remains steady on target.
                         </p>
 
-                        <h2 className="font-bebasNeue text-gray.400 text-4xl">Versatility</h2>
+                        <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl">Versatility</h2>
                         <p className="text-gray.500 text-xl leading-relaxed pb-6">
                             Our technology offers customizable magnet strength configurations, allowing users to tailor the system to their specific needs and experience levels. Whether for a novice or an expert, the Brujeria Buffer Tube can be fine-tuned for optimal performance.
                         </p>
 
-                        <h2 className="font-bebasNeue text-gray.400 text-4xl">Stability</h2>
+                        <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl">Stability</h2>
                         <p className="text-gray.500 text-xl leading-relaxed pb-6">
                             The magnets in Fry Tech's system reduce direct linear motion, while the added weight within the buffer tube enhances overall stability during shooting.
                         </p>
 
-                        <h2 className="font-bebasNeue text-gray.400 text-4xl">Dependability</h2>
+                        <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl">Dependability</h2>
                         <p className="text-gray.500 text-xl leading-relaxed pb-6">
                             Traditional springs weaken over time, increasing recoil. Fry Tech's magnets are encased for protection and rigorously tested, withstanding over 15,000 rounds per buffer tube to ensure long-lasting, reliable performance.
                         </p>
