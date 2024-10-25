@@ -5,30 +5,30 @@ import ReactPlayer from "react-player";
 export default function HeroIndex({ children, home }) {
     return (
         <section className="bg-gray.900 py-6">
-            <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl md:px-0 px-12 py-12 ">
-               <div className="pr-6">
+            <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:py-12 px-4 py-4">
+               <div className="lg:pr-6">
                    <p className="font-bebasNeue text-6xl text-gray.400 ">
                        PATENTED Brujeria Buffer Tube
                    </p>
                    <p className="text-gray.500 text-xl ">
                        Fry Tech LLC is proud to announce the release of our patented Brujeria Buffer Tube, marking the debut of our cutting-edge recoil reduction technology.
                    </p>
-                   <p className="text-gray.500 text-xl  pt-2">
+                   <p className="text-gray.500 text-xl pt-2">
                        By embedding free-moving magnets into the buffer tube of a firearm, Fry Tech has significantly reduced felt recoil, providing users with a more comfortable and enjoyable shooting experience. </p>
 
                </div>
-                <div className="lg:py-0 py-6">
+                <div className="w-full max-w-800 mx-auto sm:w-80 sm:max-w-xs">
                     <ReactPlayer
                         controls={true}
-                        playing={true}
+                        playing={false}
                         url="https://youtu.be/H0RnuminILA?si=SXsTZ3PqPAAKQ-b1"
                     />
                 </div>
 
             </div>
 
-            <section className="bg-gray.800 py-12">
-            <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl md:px-0 px-12 ">
+            <section className="bg-gray.800">
+            <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:py-12 px-4 py-4">
                 <div className="mr-6 ">
                      <h2 className="font-bebasNeue text-gray.400 text-4xl ">
                         Control
@@ -53,9 +53,9 @@ export default function HeroIndex({ children, home }) {
                         Traditional springs weaken over time, increasing recoil. Fry Tech's magnets are encased for protection and rigorously tested, withstanding over 15,000 rounds per buffer tube to ensure long-lasting, reliable performance.</p>
 
                 </div>
-                <section className="pb-8 flex justify-center bg-gray.700">
+                <section className="flex justify-center bg-gray.700 lg:px-12 lg:py-12 px-4 py-4">
                     <div className="">
-                             <div className="flex flex-col w-full md:px-12 px-2 pt-12 ">
+                             <div className="flex flex-col w-full lg:px-12 lg:py-12 px-4 py-4">
                             <div className="">
                                 <div className="font-bebasNeue text-5xl text-gray.400 ">
                                     Want to Own Your Own Fry Tech Brujeria Buffer Tube?
