@@ -5,7 +5,7 @@ import ReactPlayer from "react-player";
 export default function HeroIndex({ children, home }) {
     return (
         <section className="bg-gray.900 py-6">
-            <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl py-12 md:px-0">
+            <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl md:px-0 px-12 ">
                <div className="pr-6">
                    <p className="font-bebasNeue text-6xl text-gray.400 ">
                        PATENTED Brujeria Buffer Tube
@@ -53,7 +53,7 @@ export default function HeroIndex({ children, home }) {
                         Traditional springs weaken over time, increasing recoil. Fry Tech's magnets are encased for protection and rigorously tested, withstanding over 15,000 rounds per buffer tube to ensure long-lasting, reliable performance.</p>
 
                 </div>
-                <section className="pb-8 flex justify-center lg:bg-gray.700">
+                <section className="pb-8 flex justify-center bg-gray.700">
                     <div className="">
                              <div className="flex flex-col w-full md:px-12 px-2 pt-12 ">
                             <div className="">
