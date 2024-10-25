@@ -18,10 +18,12 @@ export default function HeroIndex({ children, home }) {
                             By embedding free-moving magnets into the buffer tube of a firearm, Fry Tech has significantly reduced felt recoil, providing users with a more comfortable and enjoyable shooting experience.
                         </p>
                     </div>
-                    <div className="lg:max-w-fit sm:max-w-sm">
+                    <div className="w-full max-w-sm lg:max-w-xl">
                         <ReactPlayer
-                            controls={true}
+                            controls={false}
                             playing={false}
+                            width="100%" // Ensure the video takes full width of the container
+                            height="100%" // Maintain aspect ratio
                             url="https://youtu.be/H0RnuminILA?si=SXsTZ3PqPAAKQ-b1"
                         />
                     </div>
