@@ -221,7 +221,7 @@ export const Form = ({ initialRef }) => {
                     <div>
                         <button
                             type="submit"
-                            className="text-xs text-medBlue.500 uppercase px-3 py-2 lg:mt-0 mt-2 rounded-lg bg-tan.100">
+                            className="text-xs text-medBlue.500 uppercase px-3 py-2 lg:mt-0 m-2 rounded-lg bg-tan.100">
                             Submit
                         </button>
                     </div>
