@@ -36,7 +36,7 @@ export const Form = ({ initialRef }) => {
     const handleContactFormSubmit = async (e) => {
         e.preventDefault();
 
-        const formLocation = campaignState ? 'campaign-usAudit-blueprospect.com' : 'FryTech website contact form';
+        const formLocation = campaignState ? 'campaign-usAudit-blueprospect.com' : 'FryTech Brujeria Contact Form';
         const endpoint =
             "https://ke37371vfe.execute-api.us-east-1.amazonaws.com/default/sendContactEmailFryTech";
 
@@ -221,7 +221,7 @@ export const Form = ({ initialRef }) => {
                     <div>
                         <button
                             type="submit"
-                            className="text-xs text-medBlue.500 uppercase px-3 py-2 lg:mt-0 m-2 rounded-lg bg-tan.100">
+                            className="text-xs text-medBlue.500 uppercase px-3 py-2 lg:mt-0 m-2 rounded-lg bg-tan.100 mb-4">
                             Submit
                         </button>
                     </div>
