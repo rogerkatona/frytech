@@ -31,7 +31,7 @@ export default function HeroIndex({ children, home }) {
             <section className="bg-gray.800">
                 <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:py-12 lg:px-0 px-6 py-12">
                     <section className="justify-center md:bg-gray.700 lg:mr-12 mr-0 mb-4 ">
-                        <div className="lg:p-12 p-0 lg:pb-0 pb-6 ">
+                        <div className="lg:p-12 p-0  pb-6 ">
 
                             <h3 className="font-bebasNeue text-5xl text-gray.400">
                                 Want to Own Your Own Fry Tech Brujeria Buffer Tube?
