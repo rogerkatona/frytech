@@ -6,15 +6,15 @@ export default function HeroIndex({ children, home }) {
     return (
         <>
             <section className="bg-gray.900">
-                <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:py-12 lg:px-0 px-4 py-4">
+                <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:py-12 lg:px-0 px-4 py-12">
                     <div className="lg:pr-6 pr-0">
-                        <p className="font-bebasNeue lg:text-8xl text-5xl text-gray.400">
+                        <p className="font-bebasNeue lg:text-8xl text-6xl text-gray.400">
                             PATENTED Brujeria Buffer Tube
                         </p>
                         <p className="text-gray.500 text-xl">
                             Fry Tech LLC is proud to announce the release of our patented Brujeria Buffer Tube, marking the debut of our cutting-edge recoil reduction technology.
                         </p>
-                        <p className="text-gray.500 text-xl pt-2">
+                        <p className="text-gray.500 text-xl pt-2 pb-6">
                             By embedding free-moving magnets into the buffer tube of a firearm, Fry Tech has significantly reduced felt recoil, providing users with a more comfortable and enjoyable shooting experience.
                         </p>
                     </div>
@@ -29,9 +29,9 @@ export default function HeroIndex({ children, home }) {
             </section>
 
             <section className="bg-gray.800">
-                <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:py-12 lg:px-0 px-4 py-4">
-                    <section className="justify-center bg-gray.700 lg:mr-12 mr-0 ">
-                        <div className="lg:p-12 p-4 ">
+                <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:py-12 lg:px-0 px-6 py-12">
+                    <section className="justify-center md:bg-gray.700 lg:mr-12 mr-0 mb-4 ">
+                        <div className="lg:p-12 p-0 lg:pb-0 pb-6 ">
 
                             <h3 className="font-bebasNeue text-5xl text-gray.400">
                                 Want to Own Your Own Fry Tech Brujeria Buffer Tube?
@@ -43,7 +43,7 @@ export default function HeroIndex({ children, home }) {
 
                         </div>
                     </section>
-                    <div className="">
+                    <div className="lg:border-none border-t-gray.700 border-t-2 lg:pt-0 pt-6">
                         <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl">Control</h2>
                         <p className="text-gray.500 text-xl leading-relaxed pb-6">
                             It's always about control. Recoil often causes the firearm to rise, taking the barrel off target. With Fry Tech's technology, recoil energy is directed linearly, keeping the barrel pointed downrange rather than lifting into the air. This increased control is especially noticeable on the second and subsequent shots, as the aim remains steady on target.
@@ -60,7 +60,7 @@ export default function HeroIndex({ children, home }) {
                         </p>
 
                         <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl">Dependability</h2>
-                        <p className="text-gray.500 text-xl leading-relaxed pb-6">
+                        <p className="text-gray.500 text-xl leading-relaxed ">
                             Traditional springs weaken over time, increasing recoil. Fry Tech's magnets are encased for protection and rigorously tested, withstanding over 15,000 rounds per buffer tube to ensure long-lasting, reliable performance.
                         </p>
                     </div>
