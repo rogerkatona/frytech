@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <section className="">
       <HeroIndex/>
-      <Quote id={0}/>
     </section>
   )
 }

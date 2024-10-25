@@ -8,7 +8,7 @@ export default function HeroIndex({ children, home }) {
             <section className="bg-gray.900">
                 <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:py-12 lg:px-0 px-4 py-12">
                     <div className="lg:pr-6 pr-0">
-                        <p className="font-bebasNeue lg:text-8xl text-6xl text-gray.400">
+                        <p className="font-bebasNeue lg:text-6xl text-4xl text-gray.400">
                             PATENTED Brujeria Buffer Tube
                         </p>
                         <p className="text-gray.500 text-xl">
@@ -48,8 +48,7 @@ export default function HeroIndex({ children, home }) {
                     <div className="lg:border-none border-t-gray.700 border-t-2 lg:pt-0 pt-6">
                         <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl">Control</h2>
                         <p className="text-gray.500 text-xl leading-relaxed pb-6">
-                            It's always about control. Recoil often causes the firearm to rise, taking the barrel off target. With Fry Tech's technology, recoil energy is directed linearly, keeping the barrel pointed downrange rather than lifting into the air. This increased control is especially noticeable on the second and subsequent shots, as the aim remains steady on target.
-                        </p>
+                            It is always about control, too many times recoil causes the gun to rise taking the barrel off the target.  Our technology keeps the recoiled energy contained in a linear direction, keeping the barrel aimed down range versus lifting in the air. </p>
 
                         <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl">Versatility</h2>
                         <p className="text-gray.500 text-xl leading-relaxed pb-6">
