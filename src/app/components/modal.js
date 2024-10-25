@@ -27,12 +27,11 @@ const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
                 <section className="max-w-7xl mx-auto flex flex-col justify-center xl:w-1/2 w-full md:px-12 px-2 pt-24 ">
                     <div className="lg:p-12 p-6">
                         <div className="font-bebasNeue text-6xl text-white.100  flex flex-row justify-center pb-12">
-                            Contact FryTech
+                            Want to Own Your Own Fry Tech Brujeria Buffer Tube?
                         </div>
                         <div className="text-gray.200 flex flex-row justify-center pb-12 text-center">
                             <div className="" >
-                                Provide your information and we will reach out to quickly to discuss how we can help. We look forward to hearing from you soon!
-                            </div>
+                                We’re excited to announce that we’re preparing for our first production run, planned for launch in Q1 2025.* If you’d like to be one of the first to own this cutting-edge technology, let us know by filling out the form below. We’ll reach out to you as soon as the product is ready to ship!</div>
                         </div>
                         <Form/>
                     </div>

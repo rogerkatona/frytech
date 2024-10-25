@@ -9,9 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "^15.0.1",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "react-player": "^2.16.0"
   },
   "devDependencies": {
     "autoprefixer": "latest",

@@ -1,45 +1,79 @@
 import {Form} from "@/app/components/form";
 import React from "react";
+import ReactPlayer from "react-player";
 
 export default function HeroIndex({ children, home }) {
     return (
-        <section className="bg-gray.800">
-            <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:h-screen90vh py-12 md:px-0 px-12">
+        <section className="bg-gray.900 py-6">
+            <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl py-12 md:px-0">
+               <div className="pr-6">
+                   <p className="font-bebasNeue text-6xl text-gray.400 ">
+                       PATENTED Brujeria Buffer Tube
+                   </p>
+                   <p className="text-gray.500 text-xl leading-relaxed">
+                       Fry Tech LLC is proud to announce the release of our patented Brujeria Buffer Tube, marking the debut of our cutting-edge recoil reduction technology.
+                   </p>
+                   <p className="text-gray.500 text-xl leading-relaxed pt-2">
+                       By embedding free-moving magnets into the buffer tube of a firearm, Fry Tech has significantly reduced felt recoil, providing users with a more comfortable and enjoyable shooting experience. </p>
 
-                <div className="pt-12 mr-6">
-                    <div className="mb-4 ">
-                        <img
-                            src="/image/logo/logoName-fryTech.png"
-                            width={400}
-                            alt="Frytech - Logo"
-                        />
-                    </div>
-                    <div className="text-gray.400 text-xl font-light leading-relaxed md:w-128">
-                        Specializes in the customization of GUNCAD parts and accessories to help builders perfect their 3D masterpieces. We also customize and resell parts and
-                        kits from other GUNCAD manufacturers and provide only the highest quality parts.
-                    </div>
+               </div>
+                <div className="">
+                    <ReactPlayer
+                        controls={true}
+                        playing={true}
+                        url="https://youtu.be/H0RnuminILA?si=SXsTZ3PqPAAKQ-b1"
+                    />
                 </div>
-                <div className="lg:mb-0 mb-6 flex justify-center lg:bg-gray.700">
+
+            </div>
+
+            <section className="bg-gray.800 py-12">
+            <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl md:px-0 px-12 ">
+                <div className="mr-6 ">
+                     <h2 className="font-bebasNeue text-gray.400 text-4xl ">
+                        Control
+                    </h2>
+                    <p className="text-gray.500 text-xl leading-relaxed pb-6">
+                        It's always about control. Recoil often causes the firearm to rise, taking the barrel off target. With Fry Tech's technology, recoil energy is directed linearly, keeping the barrel pointed downrange rather than lifting into the air. This increased control is especially noticeable on the second and subsequent shots, as the aim remains steady on target.
+                    </p>
+                    <h2 className="font-bebasNeue text-gray.400 text-4xl ">
+                        Versatility
+                    </h2>
+                    <p className="text-gray.500 text-xl leading-relaxed pb-6">
+                        Our technology offers customizable magnet strength configurations, allowing users to tailor the system to their specific needs and experience levels. Whether for a novice or an expert, the Brujeria Buffer Tube can be fine-tuned for optimal performance.</p>
+                    <h2 className="font-bebasNeue text-gray.400 text-4xl ">
+                        Stability
+                    </h2>
+                    <p className="text-gray.500 text-xl leading-relaxed pb-6">
+                        The magnets in Fry Tech's system reduce direct linear motion, while the added weight within the buffer tube enhances overall stability during shooting.</p>
+                    <h2 className="font-bebasNeue text-gray.400 text-4xl ">
+                        Dependability
+                    </h2>
+                    <p className="text-gray.500 text-xl leading-relaxed pb-6">
+                        Traditional springs weaken over time, increasing recoil. Fry Tech's magnets are encased for protection and rigorously tested, withstanding over 15,000 rounds per buffer tube to ensure long-lasting, reliable performance.</p>
+
+                </div>
+                <section className="pb-8 flex justify-center lg:bg-gray.700">
                     <div className="">
-                        <section className="flex flex-col w-full md:px-12 px-2 pt-12 w-1/2 ">
+                             <div className="flex flex-col w-full md:px-12 px-2 pt-12 ">
                             <div className="">
                                 <div className="font-bebasNeue text-5xl text-gray.400 ">
-                                    Contact FryTech
+                                    Want to Own Your Own Fry Tech Brujeria Buffer Tube?
                                 </div>
-                                <div className="text-gray.400 text-xl font-light leading-relaxed">
+                                <div className="text-gray.400 text-xl leading-relaxed">
                                     <div className="py-4" >
-                                        Provide your information and we will reach out to quickly to discuss how we can help. We look forward to hearing from you soon!
-                                    </div>
+                                        We’re excited to announce that we’re preparing for our first production run, planned for launch in Q1 2025.* If you’d like to be one of the first to own this cutting-edge technology, let us know by filling out the form below. We’ll reach out to you as soon as the product is ready to ship! </div>
                                 </div>
                                 <Form/>
                             </div>
-                        </section>
+                        </div>
                     </div>
-                </div>
+                </section>
 
 
 
             </div>
+</section>
         </section>
     )
 }
