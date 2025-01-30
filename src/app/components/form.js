@@ -209,7 +209,7 @@ export const Form = ({ initialRef }) => {
                     )}
 
                     <div>
-                        <label className="">Which AR model(s) do you own?</label>
+                        <label className="">Questions/Comments</label>
                         <textarea
                             className="w-full border border-darkBlue.700 text-darkBlue.700 py-3 px-4 mb-4"
                             rows="2"

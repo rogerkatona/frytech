@@ -20,11 +20,11 @@ export default function HeroIndex({ children, home }) {
                     </div>
                     <div className="w-full max-w-sm lg:max-w-xl">
                         <ReactPlayer
-                            controls={false}
+                            controls={true}
                             playing={false}
                             width="100%" // Ensure the video takes full width of the container
                             height="100%" // Maintain aspect ratio
-                            url="https://youtu.be/H0RnuminILA?si=SXsTZ3PqPAAKQ-b1"
+                            url="https://youtu.be/B450CzMm7-8"
                         />
                     </div>
                 </div>
@@ -36,11 +36,12 @@ export default function HeroIndex({ children, home }) {
                         <div className="lg:p-12 p-0  pb-6 ">
 
                             <h3 className="font-bebasNeue text-5xl text-gray.400">
-                                Want to Own Your Own Fry Tech Brujeria Buffer Tube?
+                                Keep Informed
                             </h3>
                             <div className="text-gray.400 text-xl leading-relaxed py-4">
-                                We’re excited to announce that we’re preparing for our first production run, planned for launch in Q1 2025.* If you’d like to be one of the first to own this cutting-edge technology, let us know by filling out the form below. We’ll reach out to you as soon as the product is ready to ship!
-                            </div>
+                                Have questions for us or want to learn about the latest from Fry
+                                Tech? Fill out the form below and we’ll respond to your questions and add you to
+                                our technology information mailing list. </div>
                             <Form />
 
                         </div>
