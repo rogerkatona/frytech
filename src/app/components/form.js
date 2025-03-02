@@ -114,16 +114,6 @@ export const Form = ({ initialRef }) => {
                     </div>
 
                     <div className="flex flex-col">
-                        <label>Company</label>
-                        <input
-                            className="text-darkBlue.700 border py-3 px-4 mb-4"
-                            placeholder="Enter your company name"
-                            value={formState.company}
-                            onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                        />
-                    </div>
-
-                    <div className="flex flex-col">
                         <label>Email*</label>
                         <input
                             className="text-darkBlue.700 border py-3 px-4 mb-4"
@@ -131,6 +121,16 @@ export const Form = ({ initialRef }) => {
                             type="email"
                             value={formState.email}
                             onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                        />
+                    </div>
+
+                    <div className="flex flex-col">
+                        <label>Company</label>
+                        <input
+                            className="text-darkBlue.700 border py-3 px-4 mb-4"
+                            placeholder="Enter your company name"
+                            value={formState.company}
+                            onChange={(e) => setFormState({ ...formState, company: e.target.value })}
                         />
                     </div>
 
