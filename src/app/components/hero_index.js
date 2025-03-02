@@ -8,7 +8,7 @@ export default function HeroIndex({ children, home }) {
             <section className="bg-gray.900">
                 <div className="flex lg:flex-row flex-col lg:mx-auto lg:max-w-7xl lg:py-12 lg:px-0 px-4 py-12">
                     <div className="lg:pr-6 pr-0">
-                        <p className="font-bebasNeue lg:text-6xl text-4xl text-gray.400">
+                        <p className="font-bebasNeue lg:text-6xl text-4xl text-gray.400 pb-3">
                             PATENTED Brujeria Buffer Tube
                         </p>
                         <p className="text-gray.500 text-xl">
@@ -35,7 +35,7 @@ export default function HeroIndex({ children, home }) {
                     <section className="justify-center md:bg-gray.700 lg:mr-12 mr-0 mb-4 ">
                         <div className="lg:p-12 p-0  pb-6 ">
 
-                            <h3 className="font-bebasNeue text-5xl text-gray.400">
+                            <h3 className="font-bebasNeue text-5xl text-gray.400 pb-2">
                                 Licensing
                             </h3>
                             <div className="text-gray.400 text-xl leading-relaxed py-4">
@@ -45,21 +45,21 @@ export default function HeroIndex({ children, home }) {
                         </div>
                     </section>
                     <div className="lg:border-none border-t-gray.700 border-t-2 lg:pt-0 pt-6">
-                        <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl">Control</h2>
-                        <p className="text-gray.500 text-xl leading-relaxed pb-6">
+                        <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl pb-2">Control</h2>
+                        <p className="text-gray.500 text-xl leading-relaxed pb-8">
                             It is always about control, too many times recoil causes the gun to rise taking the barrel off the target.  Our technology keeps the recoiled energy contained in a linear direction, keeping the barrel aimed down range versus lifting in the air. </p>
 
-                        <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl">Versatility</h2>
-                        <p className="text-gray.500 text-xl leading-relaxed pb-6">
+                        <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl pb-2">Versatility</h2>
+                        <p className="text-gray.500 text-xl leading-relaxed pb-8">
                             Our technology offers customizable magnet strength configurations, allowing users to tailor the system to their specific needs and experience levels. Whether for a novice or an expert, the Brujeria Buffer Tube can be fine-tuned for optimal performance.
                         </p>
 
-                        <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl">Stability</h2>
-                        <p className="text-gray.500 text-xl leading-relaxed pb-6">
+                        <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl pb-2">Stability</h2>
+                        <p className="text-gray.500 text-xl leading-relaxed pb-8">
                             The magnets in Fry Tech's system reduce direct linear motion, while the added weight within the buffer tube enhances overall stability during shooting.
                         </p>
 
-                        <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl">Dependability</h2>
+                        <h2 className="font-bebasNeue text-gray.400 lg:text-4xl text-3xl pb-2">Dependability</h2>
                         <p className="text-gray.500 text-xl leading-relaxed ">
                             Traditional springs weaken over time, increasing recoil. Fry Tech's magnets are encased for protection and rigorously tested, withstanding over 15,000 rounds per buffer tube to ensure long-lasting, reliable performance.
                         </p>
