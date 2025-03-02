@@ -36,12 +36,10 @@ export default function HeroIndex({ children, home }) {
                         <div className="lg:p-12 p-0  pb-6 ">
 
                             <h3 className="font-bebasNeue text-5xl text-gray.400">
-                                Keep Informed
+                                Licensing
                             </h3>
                             <div className="text-gray.400 text-xl leading-relaxed py-4">
-                                Have questions for us or want to learn about the latest from Fry
-                                Tech? Fill out the form below and we’ll respond to your questions and add you to
-                                our technology information mailing list. </div>
+                                Are you a manufacturer or designer wanting to utilize Fry Tech’s magnetic recoil reduction technology in your project? You are in luck!  Fill out the form below (or email zeke@frytech.biz) and we will contact you regarding our licensing options.</div>
                             <Form />
 
                         </div>

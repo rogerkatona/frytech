@@ -3,12 +3,10 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-export const Form = ({ initialRef }) => {
+export const FormContact = ({ initialRef }) => {
     const initialState = {
         name: '',
-        company: '',
         email: '',
-        phone: '',
         contactMessage: '',
         formLocation: '',
         country: '',
@@ -38,15 +36,13 @@ export const Form = ({ initialRef }) => {
     const handleContactFormSubmit = async (e) => {
         e.preventDefault();
 
-        const formLocation = campaignState ? 'campaign-usAudit-blueprospect.com' : 'FryTech Brujeria Licensing Form';
+        const formLocation = campaignState ? 'campaign-usAudit-blueprospect.com' : 'FryTech Brujeria Contact Form';
         const endpoint =
-            "https://ke37371vfe.execute-api.us-east-1.amazonaws.com/default/sendContactLIcenseFryTech";
+            "https://ke37371vfe.execute-api.us-east-1.amazonaws.com/default/sendContactEmailFryTech";
 
         const body = JSON.stringify({
             senderName: formState.name,
-            senderCompany: formState.company,
             senderEmail: formState.email,
-            senderPhone: formState.phone,
             message: formState.contactMessage,
             senderLocation: formLocation,
             senderCountry: formState.country,
@@ -111,16 +107,6 @@ export const Form = ({ initialRef }) => {
                     </div>
 
                     <div className="flex flex-col">
-                        <label>Company</label>
-                        <input
-                            className="text-darkBlue.700 border py-3 px-4 mb-4"
-                            placeholder="Enter your company name"
-                            value={formState.company}
-                            onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                        />
-                    </div>
-
-                    <div className="flex flex-col">
                         <label>Email*</label>
                         <input
                             className="text-darkBlue.700 border py-3 px-4 mb-4"
@@ -128,17 +114,6 @@ export const Form = ({ initialRef }) => {
                             type="email"
                             value={formState.email}
                             onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                        />
-                    </div>
-
-                    <div className="flex flex-col">
-                        <label>Phone</label>
-                        <input
-                            className="text-darkBlue.700 border py-3 px-4 mb-4"
-                            placeholder="yourname@email.com"
-                            type="email"
-                            value={formState.phone}
-                            onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                         />
                     </div>
 

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState} from 'react'
+import Modal from "./modal";
 import useModal from "../lib/useModal";
 
 
@@ -52,6 +53,13 @@ export default function Header() {
                         </button>
                     </section>
                     <section className={`${active ? '' : 'hidden'} lg:flex lg:flex-row lg:my-0 my-4`}>
+                            <Link href=''>
+                                <button
+                                    onClick={toggle}
+                                    className="hover:bg-newGunmetal.500 hover:text-newYellow.200 text-xs text-newGunmetal.900 uppercase px-4 py-3 rounded-lg md:ml-3 md:mt-0 mt-6">
+                                    Contact us
+                                </button>
+                            </Link>
                              <Link href='https://www.instagram.com/the_real_fry_tech_llc/'>
                                 <button
                                     className="bg-newGunmetal.500 hover:bg-newGunmetal.800 hover:text-newYellow.200 text-xs text-newYellow.500 uppercase px-4 py-3 rounded-lg md:ml-3 md:mt-0 mt-6">
@@ -61,6 +69,12 @@ export default function Header() {
                     </section>
                 </div>
             </div>
+            <section>
+                <Modal
+                    isShowing={isShowing}
+                    hide={toggle}
+                />
+            </section>
         </header>
 
     )
