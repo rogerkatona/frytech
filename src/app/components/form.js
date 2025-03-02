@@ -6,9 +6,7 @@ import { useRouter } from "next/navigation";
 export const Form = ({ initialRef }) => {
     const initialState = {
         name: '',
-        company: '',
         email: '',
-        phone: '',
         contactMessage: '',
         formLocation: '',
         country: '',
@@ -32,18 +30,15 @@ export const Form = ({ initialRef }) => {
     }, [router.isReady, router.pathname]);
 
     const clearFormState = () => {
-        setFormState({ ...initialState });
+        setFormState(initialState);
     };
 
     const handleContactFormSubmit = async (e) => {
         e.preventDefault();
 
-        // Define SNS Topic ARN
         const SNS_TOPIC_ARN = "arn:aws:sns:us-east-1:697974131866:send-email-topic"; // Replace with your actual SNS ARN
+        const formLocation = campaignState ? 'campaign-usAudit-blueprospect.com' : 'FryTech Brujeria Contact Form';
 
-        const formLocation = campaignState ? 'campaign-usAudit-blueprospect.com' : 'FryTech Brujeria Licensing Form';
-
-        // Ensure required fields are filled
         if (!formState.name || !formState.email || !formState.contactMessage) {
             setToastMessage({
                 message: (
@@ -55,16 +50,13 @@ export const Form = ({ initialRef }) => {
             return;
         }
 
-        // Format message for SNS
         const messageBody = `
             You just received a message:
 
             From: ${formState.name} <${formState.email}>
-            Company: ${formState.company || "N/A"}
-            Phone: ${formState.phone || "N/A"}
             Location: ${formLocation}
             Country: ${formState.country || "N/A"}
-            State: ${formState.state || "N/A"}
+            ${formState.country === "US" ? `State: ${formState.state || "N/A"}` : ""}
             
             Message:
             ${formState.contactMessage}
@@ -73,7 +65,6 @@ export const Form = ({ initialRef }) => {
             Fry Tech Licensing System
         `;
 
-        // Prepare request for AWS SNS
         const requestBody = new URLSearchParams({
             "Action": "Publish",
             "TopicArn": SNS_TOPIC_ARN,
@@ -143,24 +134,95 @@ export const Form = ({ initialRef }) => {
                     </div>
 
                     <div className="flex flex-col">
-                        <label>Company</label>
-                        <input
+                        <label>Country</label>
+                        <select
                             className="text-darkBlue.700 border py-3 px-4 mb-4"
-                            placeholder="Enter your company name"
-                            value={formState.company}
-                            onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                        />
+                            value={formState.country}
+                            onChange={(e) => setFormState({ ...formState, country: e.target.value })}
+                        >
+                            <option value="">Select Country</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="MX">Mexico</option>
+                            <option value="GB">United Kingdom</option>
+                            <option value="AU">Australia</option>
+                            <option value="DE">Germany</option>
+                            <option value="FR">France</option>
+                            <option value="IT">Italy</option>
+                            <option value="ES">Spain</option>
+                            <option value="JP">Japan</option>
+                            <option value="CN">China</option>
+                            <option value="IN">India</option>
+                            <option value="BR">Brazil</option>
+                            <option value="ZA">South Africa</option>
+                            <option value="RU">Russia</option>
+                            <option value="KR">South Korea</option>
+                            <option value="SG">Singapore</option>
+                        </select>
                     </div>
 
-                    <div className="flex flex-col">
-                        <label>Phone</label>
-                        <input
-                            className="text-darkBlue.700 border py-3 px-4 mb-4"
-                            placeholder="Enter your phone number"
-                            value={formState.phone}
-                            onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                        />
-                    </div>
+                    {formState.country === "US" && (
+                        <div className="flex flex-col">
+                            <label>State</label>
+                            <select
+                                className="text-darkBlue.700 border py-3 px-4 mb-4"
+                                value={formState.state}
+                                onChange={(e) => setFormState({ ...formState, state: e.target.value })}
+                            >
+                                <option value="">Select State</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                        </div>
+                    )}
 
                     <div className="flex flex-col">
                         <label>Questions/Comments</label>
