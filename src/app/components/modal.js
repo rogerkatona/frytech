@@ -15,8 +15,14 @@ const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
                     <div className="modal-close cursor-pointer z-20 p-4">
                         <button type="button" className="text-newYellow.500" data-dismiss="modal" aria-label="Close" onClick={hide}>
                             <span aria-hidden="true">
-                                <svg className="fill-current text-newYellow.500" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                     viewBox="0 0 18 18">
+                                <svg
+                                    className=''
+                                    fill='#ffffff'
+                                    stroke='none'
+                                    xmlns='http://www.w3.org/2000/svg'
+                                    width='32'
+                                    height='32'
+                                    viewBox='0 0 18 18'>
                                     <path
                                         d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
                                 </svg>
