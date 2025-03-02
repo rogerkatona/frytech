@@ -55,6 +55,9 @@ export const Form = ({ initialRef }) => {
 
         const requestOptions = {
             method: "POST",
+            headers: {
+                "Content-Type": "application/json" // 👈 ADD THIS
+            },
             body
         };
 
@@ -66,7 +69,7 @@ export const Form = ({ initialRef }) => {
                 if (res.status === 200 || res.status === 500) {
                     setToastMessage({
                         message: (
-                            <div className={`${campaignState ? 'hidden' : 'block'} absolute bottom-0 text-white.100 -mb-10`}>
+                            <div className={`${campaignState ? 'hidden' : 'block'} absolute bottom-0 text-white.100 mb-10`}>
                                 Thank you for reaching out to us. We&apos;ll respond to you shortly! Have a great day.
                             </div>
                         )
