@@ -57,7 +57,7 @@ export default function Header() {
                                 <button
                                     onClick={toggle}
                                     className="hover:bg-newGunmetal.500 hover:text-newYellow.200 text-xs text-newGunmetal.900 uppercase px-4 py-3 rounded-lg md:ml-3 md:mt-0 mt-6">
-                                    Contact
+                                    Contact Us
                                 </button>
                             </Link>
                              <Link href='https://www.instagram.com/the_real_fry_tech_llc/'>

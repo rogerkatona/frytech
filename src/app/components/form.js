@@ -77,8 +77,10 @@ export const Form = ({ initialRef }) => {
             "Action": "Publish",
             "TopicArn": SNS_TOPIC_ARN,
             "Message": messageBody,
-            "Subject": `Message from ${formState.name}`
+            "Subject": `Message from ${formState.name}`,
+            "Version": "2010-03-31" // REQUIRED for AWS SNS API
         });
+
 
         try {
             const response = await fetch("https://sns.us-east-1.amazonaws.com/", {
@@ -91,9 +93,9 @@ export const Form = ({ initialRef }) => {
 
             let responseBody;
             try {
-                responseBody = await response.json(); // ✅ Try parsing the response as JSON
+                responseBody = await response.json(); // Try parsing the response as JSON
             } catch (jsonError) {
-                responseBody = null; // ✅ If response is not JSON, continue without breaking
+                responseBody = null; // If response is not JSON, continue without breaking
             }
 
             if (response.ok) {
