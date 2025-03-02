@@ -40,7 +40,6 @@ export const Form = ({ initialRef }) => {
 
         // Define SNS Topic ARN
         const SNS_TOPIC_ARN = "arn:aws:sns:us-east-1:697974131866:send-email-topic"; // Replace with your actual SNS ARN
-
         const formLocation = campaignState ? 'campaign-usAudit-blueprospect.com' : 'FryTech Brujeria Licensing Form';
 
         // Ensure required fields are filled
@@ -90,6 +89,13 @@ export const Form = ({ initialRef }) => {
                 body: requestBody
             });
 
+            let responseBody;
+            try {
+                responseBody = await response.json(); // ✅ Try parsing the response as JSON
+            } catch (jsonError) {
+                responseBody = null; // ✅ If response is not JSON, continue without breaking
+            }
+
             if (response.ok) {
                 setToastMessage({
                     message: (
@@ -99,15 +105,22 @@ export const Form = ({ initialRef }) => {
                     )
                 });
                 clearFormState();
-            } else {
-                throw new Error(`Failed to send message. Status: ${response.status}`);
+            }else {
+                console.error("SNS API Error:", responseBody || `Status Code: ${response.status}`);
+                setToastMessage({
+                    message: (
+                        <div className="text-lightRed.900 font-bold absolute bottom-0 -mb-10">
+                            There was an error sending your message. Please try again later.
+                        </div>
+                    )
+                });
             }
-        } catch (error) {
-            console.error("SNS Email Error:", error);
+        } catch (networkError) {
+            console.error("Network Error:", networkError);
             setToastMessage({
                 message: (
                     <div className="text-lightRed.900 font-bold absolute bottom-0 -mb-10">
-                        There was an error sending your message. Please try again later.
+                        There was an error sending your message. Please check your internet connection and try again.
                     </div>
                 )
             });
