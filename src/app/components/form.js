@@ -6,7 +6,9 @@ import { useRouter } from "next/navigation";
 export const Form = ({ initialRef }) => {
     const initialState = {
         name: '',
+        company: '',
         email: '',
+        phone: '',
         contactMessage: '',
         formLocation: '',
         country: '',
@@ -30,33 +32,39 @@ export const Form = ({ initialRef }) => {
     }, [router.isReady, router.pathname]);
 
     const clearFormState = () => {
-        setFormState(initialState);
+        setFormState({ ...initialState });
     };
 
     const handleContactFormSubmit = async (e) => {
         e.preventDefault();
 
+        // Define SNS Topic ARN
         const SNS_TOPIC_ARN = "arn:aws:sns:us-east-1:697974131866:send-email-topic"; // Replace with your actual SNS ARN
-        const formLocation = campaignState ? 'campaign-usAudit-blueprospect.com' : 'FryTech Brujeria Contact Form';
 
-        if (!formState.name || !formState.email || !formState.contactMessage) {
+        const formLocation = campaignState ? 'campaign-usAudit-blueprospect.com' : 'FryTech Brujeria Licensing Form';
+
+        // Ensure required fields are filled
+        if (!formState.name || !formState.email) {
             setToastMessage({
                 message: (
                     <div className="text-lightRed.900 font-bold absolute -bottom-1 -mb-10">
-                        Please fill out required fields (*Name, Email, and Message*).
+                        Please fill out required fields (*Name, *Email).
                     </div>
                 )
             });
             return;
         }
 
+        // Format message for SNS
         const messageBody = `
             You just received a message:
 
             From: ${formState.name} <${formState.email}>
+            Company: ${formState.company || "N/A"}
+            Phone: ${formState.phone || "N/A"}
             Location: ${formLocation}
             Country: ${formState.country || "N/A"}
-            ${formState.country === "US" ? `State: ${formState.state || "N/A"}` : ""}
+            State: ${formState.state || "N/A"}
             
             Message:
             ${formState.contactMessage}
@@ -65,6 +73,7 @@ export const Form = ({ initialRef }) => {
             Fry Tech Licensing System
         `;
 
+        // Prepare request for AWS SNS
         const requestBody = new URLSearchParams({
             "Action": "Publish",
             "TopicArn": SNS_TOPIC_ARN,
@@ -134,6 +143,25 @@ export const Form = ({ initialRef }) => {
                     </div>
 
                     <div className="flex flex-col">
+                        <label>Company</label>
+                        <input
+                            className="text-darkBlue.700 border py-3 px-4 mb-4"
+                            placeholder="Enter your company name"
+                            value={formState.company}
+                            onChange={(e) => setFormState({ ...formState, company: e.target.value })}
+                        />
+                    </div>
+
+                    <div className="flex flex-col">
+                        <label>Phone</label>
+                        <input
+                            className="text-darkBlue.700 border py-3 px-4 mb-4"
+                            placeholder="Enter your phone number"
+                            value={formState.phone}
+                            onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                        />
+                    </div>
+                    <div className="flex flex-col">
                         <label>Country</label>
                         <select
                             className="text-darkBlue.700 border py-3 px-4 mb-4"
@@ -165,7 +193,7 @@ export const Form = ({ initialRef }) => {
                         <div className="flex flex-col">
                             <label>State</label>
                             <select
-                                className="text-darkBlue.700 border py-3 px-4 mb-4"
+                                className="text-darkBlue.700 border py-4 px-4 mb-4"
                                 value={formState.state}
                                 onChange={(e) => setFormState({ ...formState, state: e.target.value })}
                             >
@@ -223,7 +251,6 @@ export const Form = ({ initialRef }) => {
                             </select>
                         </div>
                     )}
-
                     <div className="flex flex-col">
                         <label>Questions/Comments</label>
                         <textarea
