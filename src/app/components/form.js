@@ -136,7 +136,7 @@ export const Form = ({ initialRef }) => {
                         <input
                             className="text-darkBlue.700 border py-3 px-4 mb-4"
                             placeholder="Enter your phone number"
-                            type="email"
+                            type="phone"
                             value={formState.phone}
                             onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                         />
