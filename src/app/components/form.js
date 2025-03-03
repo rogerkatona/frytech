@@ -38,91 +38,55 @@ export const Form = ({ initialRef }) => {
     const handleContactFormSubmit = async (e) => {
         e.preventDefault();
 
-        // Define SNS Topic ARN
-        const SNS_TOPIC_ARN = "arn:aws:sns:us-east-1:697974131866:send-email-topic"; // Replace with your actual SNS ARN
         const formLocation = campaignState ? 'campaign-usAudit-blueprospect.com' : 'FryTech Brujeria Licensing Form';
+        const endpoint =
+            "https://ke37371vfe.execute-api.us-east-1.amazonaws.com/default/sendContactLIcenseFryTech";
 
-        // Ensure required fields are filled
-        if (!formState.name || !formState.email) {
-            setToastMessage({
-                message: (
-                    <div className="text-lightRed.900 font-bold absolute -bottom-1 -mb-10">
-                        Please fill out required fields (*Name, *Email).
-                    </div>
-                )
-            });
-            return;
-        }
-
-        // Format message for SNS
-        const messageBody = `
-            You just received a message:
-
-            From: ${formState.name} <${formState.email}>
-            Company: ${formState.company || "N/A"}
-            Phone: ${formState.phone || "N/A"}
-            Location: ${formLocation}
-            Country: ${formState.country || "N/A"}
-            State: ${formState.state || "N/A"}
-            
-            Message:
-            ${formState.contactMessage}
-
-            Regards,
-            Fry Tech Licensing System
-        `;
-
-        // Prepare request for AWS SNS
-        const requestBody = new URLSearchParams({
-            "Action": "Publish",
-            "TopicArn": SNS_TOPIC_ARN,
-            "Message": messageBody,
-            "Subject": `Message from ${formState.name}`,
-            "Version": "2010-03-31" // REQUIRED for AWS SNS API
+        const body = JSON.stringify({
+            senderName: formState.name,
+            senderCompany: formState.company,
+            senderEmail: formState.email,
+            senderPhone: formState.phone,
+            message: formState.contactMessage,
+            senderLocation: formLocation,
+            senderCountry: formState.country,
+            senderState: formState.state
         });
 
+        const requestOptions = {
+            method: "POST",
+            body
+        };
 
-        try {
-            const response = await fetch("https://sns.us-east-1.amazonaws.com/", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                },
-                body: requestBody
-            });
+        const { name, email } = formState;
 
-            let responseBody;
+        if (name && email) {
             try {
-                responseBody = await response.json(); // Try parsing the response as JSON
-            } catch (jsonError) {
-                responseBody = null; // If response is not JSON, continue without breaking
-            }
-
-            if (response.ok) {
-                setToastMessage({
-                    message: (
-                        <div className="text-green-500 font-bold absolute bottom-0 -mb-10">
-                            Thank you! Your message has been sent successfully.
-                        </div>
-                    )
-                });
-                clearFormState();
-            }else {
-                console.error("SNS API Error:", responseBody || `Status Code: ${response.status}`);
+                const res = await fetch(endpoint, requestOptions);
+                if (res.status === 200 || res.status === 500) {
+                    setToastMessage({
+                        message: (
+                            <div className={`${campaignState ? 'hidden' : 'block'} absolute bottom-0 text-white.100 -mb-10`}>
+                                Thank you for reaching out to us. We&apos;ll respond to you shortly! Have a great day.
+                            </div>
+                        )
+                    });
+                    clearFormState();
+                }
+            } catch (e) {
                 setToastMessage({
                     message: (
                         <div className="text-lightRed.900 font-bold absolute bottom-0 -mb-10">
-                            There was an error sending your message. Please try again later.
+                            Deepest apologies. There was an error with your request. Please try again later.
                         </div>
                     )
                 });
             }
-        } catch (networkError) {
-            console.error("Network Error:", networkError);
+        } else {
             setToastMessage({
                 message: (
-                    <div className="text-lightRed.900 font-bold absolute bottom-0 -mb-10">
-                        There was an error sending your message. Please check your internet connection and try again.
+                    <div className="text-lightRed.900 font-bold absolute -bottom-1 -mb-10">
+                        Please verify all fields are filled out.
                     </div>
                 )
             });
@@ -157,6 +121,7 @@ export const Form = ({ initialRef }) => {
                         />
                     </div>
 
+
                     <div className="flex flex-col">
                         <label>Company</label>
                         <input
@@ -167,6 +132,8 @@ export const Form = ({ initialRef }) => {
                         />
                     </div>
 
+
+
                     <div className="flex flex-col">
                         <label>Phone</label>
                         <input
@@ -176,6 +143,7 @@ export const Form = ({ initialRef }) => {
                             onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                         />
                     </div>
+
                     <div className="flex flex-col">
                         <label>Country</label>
                         <select
@@ -266,8 +234,9 @@ export const Form = ({ initialRef }) => {
                             </select>
                         </div>
                     )}
-                    <div className="flex flex-col">
-                        <label>Questions/Comments</label>
+
+                    <div>
+                        <label className="">Questions/Comments</label>
                         <textarea
                             className="w-full border border-darkBlue.700 text-darkBlue.700 py-3 px-4 mb-4"
                             rows="2"
