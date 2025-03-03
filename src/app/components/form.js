@@ -55,7 +55,10 @@ export const Form = ({ initialRef }) => {
 
         const requestOptions = {
             method: "POST",
-            headers: { "Content-Type": "application/json" }, // ✅ Added headers
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"  // Helps with some API Gateway setups
+            },
             body
         };
 
