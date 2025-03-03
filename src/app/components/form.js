@@ -44,49 +44,61 @@ export const Form = ({ initialRef }) => {
 
         const body = JSON.stringify({
             senderName: formState.name,
-            senderCompany: formState.company,
+            senderCompany: formState.company || "N/A",
             senderEmail: formState.email,
-            senderPhone: formState.phone,
-            message: formState.contactMessage,
+            senderPhone: formState.phone || "N/A",
+            message: formState.contactMessage || "No message provided",
             senderLocation: formLocation,
-            senderCountry: formState.country,
-            senderState: formState.state
+            senderCountry: formState.country || "N/A",
+            senderState: formState.state || "N/A"
         });
 
         const requestOptions = {
             method: "POST",
+            headers: { "Content-Type": "application/json" }, // ✅ Added headers
             body
         };
 
-        const { name, email } = formState;
-
-        if (name && email) {
-            try {
-                const res = await fetch(endpoint, requestOptions);
-                if (res.status === 200 || res.status === 500) {
-                    setToastMessage({
-                        message: (
-                            <div className={`${campaignState ? 'hidden' : 'block'} absolute bottom-0 text-white.100 -mb-10`}>
-                                Thank you for reaching out to us. We&apos;ll respond to you shortly! Have a great day.
-                            </div>
-                        )
-                    });
-                    clearFormState();
-                }
-            } catch (e) {
-                setToastMessage({
-                    message: (
-                        <div className="text-lightRed.900 font-bold absolute bottom-0 -mb-10">
-                            Deepest apologies. There was an error with your request. Please try again later.
-                        </div>
-                    )
-                });
-            }
-        } else {
+        if (!formState.name || !formState.email) {
             setToastMessage({
                 message: (
                     <div className="text-lightRed.900 font-bold absolute -bottom-1 -mb-10">
                         Please verify all fields are filled out.
+                    </div>
+                )
+            });
+            return;
+        }
+
+        try {
+            const res = await fetch(endpoint, requestOptions);
+            const data = await res.json(); // arse response JSON
+
+            if (res.ok) {
+                setToastMessage({
+                    message: (
+                        <div className={`${campaignState ? 'hidden' : 'block'} absolute bottom-0 text-green-500 -mb-10`}>
+                            Thank you! Your message has been sent successfully.
+                        </div>
+                    )
+                });
+                clearFormState();
+            } else {
+                console.error("API Error:", data);
+                setToastMessage({
+                    message: (
+                        <div className="text-lightRed.900 font-bold absolute bottom-0 -mb-10">
+                            There was an error sending your message. {data.message || "Please try again later."}
+                        </div>
+                    )
+                });
+            }
+        } catch (error) {
+            console.error("Fetch Error:", error);
+            setToastMessage({
+                message: (
+                    <div className="text-lightRed.900 font-bold absolute bottom-0 -mb-10">
+                        There was an error sending your message. Please check your internet connection and try again.
                     </div>
                 )
             });
