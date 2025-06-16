@@ -29,9 +29,9 @@ export default function Footer() {
             </div>
         </section>
 
-            <div className='flex md:flex-row flex-col'>
+{/*            <div className='flex md:flex-row flex-col'>
                 <NavBar navItems={navItems}/>
-            </div>
+            </div>*/}
             <div>
                 <Link href=''>
                     <button
