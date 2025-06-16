@@ -60,12 +60,12 @@ export default function Header() {
                                     Contact
                                 </button>
                             </Link>
-                             <Link href='https://www.instagram.com/the_real_fry_tech_llc/'>
+{/*                             <Link href='https://www.instagram.com/the_real_fry_tech_llc/'>
                                 <button
                                     className="bg-newGunmetal.500 hover:bg-newGunmetal.800 hover:text-newYellow.200 text-xs text-newYellow.500 uppercase px-4 py-3 rounded-lg md:ml-3 md:mt-0 mt-6">
                                     Instagram
                                 </button>
-                            </Link>
+                            </Link>*/}
                     </section>
                 </div>
             </div>
