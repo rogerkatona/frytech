@@ -56,7 +56,7 @@ export default function Header() {
                             <Link href=''>
                                 <button
                                     onClick={toggle}
-                                    className="bg-newGunmetal.500 text-newYellow.50 hover:bg-newGunmetal.100 hover:text-newYellow.200 text-xs text-newGunmetal.900 uppercase px-4 py-3 rounded-lg md:ml-3 md:mt-0 mt-6">
+                                    className="bg-newGunmetal.500 text-newYellow.50 hover:bg-newGunmetal.700 hover:text-newYellow.200 text-xs text-newGunmetal.900 uppercase px-4 py-3 rounded-lg md:ml-3 md:mt-0 mt-6">
                                     Contact
                                 </button>
                             </Link>
